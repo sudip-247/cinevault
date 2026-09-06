@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieVault</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div>
+        <strong>MovieVault</strong>
+        <span>Your private cinema</span>
+      </div>
+    </div>
+    <nav class="nav">
+      <button class="nav-item active" data-view="home"><span>⌂</span> Home</button>
+      <button class="nav-item" data-view="watchlist"><span>▣</span> Watchlist</button>
+      <button class="nav-item" data-view="favorites"><span>♥</span> Favorites</button>
+      <button class="nav-item" data-view="watching"><span>▶</span> Watching</button>
+      <button class="nav-item" data-view="completed"><span>✓</span> Completed</button>
+      <button class="nav-item" data-view="stats"><span>◔</span> Statistics</button>
+    </nav>
+    
+  </aside>
+  <header>
+    
+  </header>
+  <!----------- HOME PAGE: featured hero title, "continue watching" row, "recently added" grid -->
+  <section class="home">
+    <div class="toolbar">
+      <div class="search-bar">
+        <span class="search-icon">⌕</span>
+        <input type="text" class="search-content" placeholder="Search your vault...">
+      </div>
+      <button class="add-content-btn"><span>+</span> Add title</button>
+    </div>
+
+    <!--watching -->
+    <section class="watching-content">
+      <div class="section-heading">
+        <div>
+            <span class="section-kicker">Discover</span>
+            <h2>Continue Watching</h2>
+        </div>
+        <button class="text-btn" data-view-jump="watching">View all →</button>
+      </div>
+      <div class="watching-cards">
+        <!-- cards injected by script.js -->
+      </div>
+    </section>
+    <!-------all---------->
+    <section class="all-content">
+      <div class="section-heading">
+        <div>
+            <span class="section-kicker">YOUR COLLECTION</span>
+            <h2>Recently Added</h2>
+        </div>
+        <button class="text-btn" data-view-jump="watchlist">View all →</button>
+      </div>
+      <div class="watchlist-cards">
+        <!-- cards injected by script.js -->
+      </div>
+
+
+  </section>
+
+
+
+
+
+  <!----- ADD content form ------>
+  <div class="add-overlay" id="add-overlay">
+    <div class="add">
+      <div class="add-header">
+        <h3>Add to your vault</h3>
+        <button class="add-close" id="addcloseBtn">&times;</button>
+      </div>
+      <form id="addMovieForm">
+        <div class="form-row">
+          <label for="titleInput">Title</label>
+          <input type="text" id="titleInput" placeholder="e.g. Fight Club" required>
+        </div>
+        <div class="form-row form-row-split">
+          <div>
+            <label for="yearInput">Year</label>
+            <input type="number" id="yearInput" placeholder="2024" min="1900">
+          </div>
+          <div>
+            <label for="genreInput">Genre</label>
+            <input type="text" id="genreInput" placeholder="e.g. Sci-Fi">
+          </div>
+        </div>
+        <div class="form-row form-row-split">
+          <div>
+            <label for="categoryinput">Category</label>
+            <select id="categoryinput">
+              <option value="Movie">Movie</option>
+              <option value="TV Show">TV Show</option>
+              <option value="Anime">Anime</option>
+            </select>
+          </div>
+          <div>
+            <label for="statusinput">Status</label>
+            <select id="statusinput">
+              <option value="Watchlist">Watchlist</option>
+              <option value="Watching">Watching</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="poster-url-input">Poster image URL</label>
+          <input type="text" id="poster-url-input" placeholder="https://example.com/poster.jpg">
+        </div>
+        <div class="form-row">
+          <label for="posterinput">…or upload from device</label>
+          <input type="file" id="posterinput" accept="image/*">
+          <div class="poster-preview" id="posterpreview">
+            <span>No image selected</span>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="cancel-vault-btn" id="cancelbtn">Cancel</button>
+          <button type="submit" class="add-vault-btn">Add to Vault</button>
+        </div>
+      </form>
+    </div>
+  </div>
+    
+
+
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
